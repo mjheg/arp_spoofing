@@ -1,0 +1,18 @@
+ip헤더구조는 version number, header length, DS, ECN, Packet Length, identification, Flag, DF, MF, Fragment offset, Time to Live, Transport, Header Checksum, Source Address,
+Destination Address, Optiond,padding이 있다.
+ip version number은 말 그대로 ip version에대한 정보이다.
+header length는 말 그대로 헤더의 길이이다.
+DS
+
+packet length는 말 그대로 packet length의 길이이다.
+identification은 식별자 예를 들어 주민등록증 같은것이다.
+DF는 패킷이 전송되는 과정에 너무 커서 분할 되는것을 막는 것이다. 분할해야하는걸 못하게하면 그냥 버림
+MF는 분할되어 오는 패킷들이 이것들이 다 하나야 를 알려주는것이다. 만약 뒤에 올것이 있으면 1로 표시하고 마지막은 0으로 표시해서 끝낸다.
+fragment offset은 아마 패킷이 전송될때 같은 길로 가게 해주는 것이다.
+time to live는 패킷이 올바른 길?을 찾지못하면 계속 떠도는데 그걸 막기위해 정한 생존시간안에 도착하지 못하면 그 패킷을 버리고 icmp라는 오류메세지를 띄우는 것이다.
+transport 전송 프로토콜 데이터를 주고받을때 사용되는 규칙이다.
+Header Checksum은 헤더에 표기된것중 오류가 있는지 검출하는 기능이다.
+Source Address는 송신호스트의 ip주소이다.
+destinationaddress는 수신호스트의 ip주소이다.
+padding은 딱 32비트로 맞춰서 컴퓨터가 한번에 읽을수있게 해주는것이다.
+DS, ecn은 service type 우선순위, 지연률, 전송률, 신뢰성, 언제 전송될지 예약을 나타낸다?
